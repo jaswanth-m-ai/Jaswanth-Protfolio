@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jaswanth Madamanchi — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f4f2;--fg:#111;--mut:#9a9a96;--line:#d8d8d4;--dk:#0e1a18;--dkfg:#eaf2ef;--ac:#ff5a1f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#f4f4f2;--fg:#111}}
+:root[data-theme="dark"]{--bg:#f4f4f2;--fg:#111}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--fg);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top,0px)) 4vw 14px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;mix-blend-mode:difference;color:#fff}
+nav div{display:flex;gap:18px;flex-wrap:wrap}nav a{color:inherit;text-decoration:none}
+.hero{height:100vh;min-height:560px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero h1{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:min(23vw,300px);letter-spacing:-.01em;line-height:1;position:absolute;z-index:1}
+.photo{position:absolute;z-index:2;bottom:0;left:50%;transform:translateX(-50%);width:min(44vw,380px);height:78%;border:1.5px dashed var(--fg);border-bottom:0;border-radius:200px 200px 0 0;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;background:rgba(244,244,242,.4);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.hl,.hr{position:absolute;z-index:3;bottom:6vh;font-size:11px;letter-spacing:.1em;text-transform:uppercase;max-width:200px}
+.hl{left:4vw}.hr{right:4vw;text-align:right}.hr b{display:block;font-size:20px;letter-spacing:0;font-weight:500}
+section{padding:12vh 4vw}
+h2{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin-bottom:28px;font-weight:500}
+.big{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(40px,8vw,110px);line-height:1;text-transform:uppercase}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:start}
+.about p{font-size:17px;max-width:520px;margin-bottom:16px}
+.ph2{aspect-ratio:3/4;border:1.5px dashed var(--fg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;overflow:hidden}
+.ph2 img{width:100%;height:100%;object-fit:cover}
+.dk{background:var(--dk);color:var(--dkfg);overflow:hidden}.dk h2{color:#7f9b94}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 50px}
+.tabs button{background:none;border:1px solid #3b5750;color:var(--dkfg);padding:8px 14px;border-radius:99px;font:inherit;font-size:12px;cursor:pointer}
+.tabs button.on{background:var(--dkfg);color:var(--dk)}
+.fan{position:relative;height:420px;max-width:900px;margin:0 auto}
+.card{position:absolute;left:50%;top:0;width:min(280px,64vw);min-height:340px;margin-left:min(-140px,-32vw);padding:22px;border-radius:14px;background:#1b2e2a;border:1px solid #3b5750;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .6s;cursor:pointer;transform-origin:50% 120%}
+.card.on{background:var(--ac);color:#111;border-color:var(--ac)}
+.card h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:26px;text-transform:uppercase;margin-bottom:12px}
+.card li{list-style:none;font-size:14px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.15)}.card.on li{border-color:rgba(0,0,0,.2)}
+.item{display:grid;grid-template-columns:200px 1fr;gap:4vw;padding:34px 0;border-top:1px solid var(--line)}
+.item h3{font-size:22px;font-weight:600}.item .m{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.item ul{padding-left:18px;margin-top:12px}.item li{margin-bottom:8px;max-width:760px}
+.tag{display:inline-block;font-size:12px;border:1px solid var(--fg);border-radius:99px;padding:3px 12px;margin:10px 6px 0 0}
+.cta{padding-bottom:6vh}.cta .big{font-size:clamp(48px,11vw,160px)}.cta .big span{color:#bdbdb8}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:4vw;margin-top:8vh}
+.cols div{border-top:1px solid var(--fg);padding-top:12px;font-size:14px;word-break:break-word}.cols small{display:block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--mut);margin-bottom:6px}
+.cols a{color:inherit}footer{padding:24px 4vw;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);display:flex;justify-content:space-between}
+@media(max-width:760px){.about,.item{grid-template-columns:1fr}.cols{grid-template-columns:1fr 1fr}.hl{display:none}nav div:first-child{display:none}}
+
+nav{mix-blend-mode:normal!important;color:var(--fg)!important;background:rgba(244,244,242,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);align-items:center;padding:calc(12px + env(safe-area-inset-top,0px)) 4vw 12px!important}
+nav .brand{font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:12px}
+nav .links{display:flex;gap:6px;align-items:center;overflow-x:auto;scrollbar-width:none}
+nav .links a{position:relative;padding:7px 11px;border-radius:99px;color:#55554f;font-weight:500;transition:color .2s,background .2s;white-space:nowrap}
+nav .links a:hover{color:var(--ac);background:rgba(255,90,31,.08)}
+nav .links a.active{color:var(--fg);font-weight:700;background:#e6e6e1}
+nav .links a.rbtn{background:var(--fg);color:#fff;margin-left:6px}
+nav .links a.rbtn:hover{background:var(--ac);color:#fff}
+.hero{padding-top:60px}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.08)}
+.pcard .when{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.pcard h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px;text-transform:uppercase;margin:8px 0 12px}
+.pcard>p{color:#3a3a36;margin-bottom:18px}
+.stat{display:inline-block;background:var(--fg);color:#fff;border-radius:10px;padding:8px 14px;font-size:13px;margin-bottom:18px;align-self:flex-start}
+.hl4{display:grid;gap:12px;margin-bottom:20px}
+.hl4 div{border-left:3px solid var(--ac);padding-left:12px;font-size:14px}
+.hl4 b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:2px}
+.pcard .foot{margin-top:auto}.btn{display:inline-block;padding:10px 20px;border-radius:99px;border:1px solid var(--fg);color:var(--fg);text-decoration:none;font-size:13px;font-weight:500;transition:.2s}
+.btn:hover{background:var(--ac);border-color:var(--ac);color:#fff}.btn.solid{background:var(--fg);color:#fff}
+.resume{text-align:center;padding:10vh 4vw;background:#e9e9e4}
+.resume .big{font-size:clamp(34px,6vw,80px);margin-bottom:14px}.resume p{color:#55554f;margin-bottom:28px}
+.resume .btn{margin:6px}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.cc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;transition:.25s}
+.cc:hover{border-color:var(--ac);transform:translateY(-3px)}
+.cc b{display:block;font-size:15px;margin-bottom:6px}.cc span{font-size:12px;color:var(--mut);letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:760px){.pgrid{grid-template-columns:1fr}nav .brand{display:none}}
+
+html{-webkit-text-size-adjust:100%}body{overflow-x:hidden;word-wrap:break-word}img{max-width:100%}
+.hero{height:100vh;height:100svh}
+nav .links{min-width:0;-webkit-overflow-scrolling:touch}
+.card{margin-left:calc(min(280px,64vw)/-2)}
+.fan{height:500px}
+.hl,.hr{display:block}
+@media(max-width:1024px){nav .brand{display:none}nav{justify-content:center}.item{grid-template-columns:1fr;gap:8px}.cols{grid-template-columns:1fr 1fr}.about{gap:5vw}}
+@media(max-width:760px){
+ section{padding:9vh 5vw}.about{grid-template-columns:1fr}.ph2{max-width:340px}
+ .hero h1{font-size:25vw}.photo{width:70vw;height:70%}.hl,.hr{display:none}
+ .pcard{padding:22px}.pcard h3{font-size:26px}
+ .fan{height:520px}.tabs button{padding:7px 12px}
+ .cgrid{grid-template-columns:1fr}.cta .big{font-size:15vw}
+ footer{flex-direction:column;gap:8px;text-align:center}.resume .btn{display:block;margin:10px auto;max-width:280px}
+ .big{font-size:clamp(34px,11vw,60px)}.item ul{padding-left:16px}}
+@media(max-width:480px){.cols{grid-template-columns:1fr}nav .links a{padding:7px 9px;font-size:10px}}
+.item>div,.item>ul{min-width:0}
+@media(max-width:1024px){.item{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){.about{grid-template-columns:minmax(0,1fr)}.hero h1{font-size:20vw}}
+nav .links{flex-wrap:nowrap!important;max-width:100%}
+@media(max-width:760px){.hero h1{font-size:17vw}nav{padding-left:3vw!important;padding-right:3vw!important;justify-content:flex-start}}
+a.cc{display:block;text-decoration:none;color:inherit}a.cc em{display:block;margin-top:12px;font-style:normal;font-size:13px;font-weight:600;color:var(--ac)}a.cc:hover b{text-decoration:underline}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:560px;margin-top:28px}
+.stats div{border-top:2px solid var(--fg);padding-top:10px}.stats b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:30px}
+.stats span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+@media(max-width:480px){.stats{grid-template-columns:1fr 1fr}}
+.photo{border:0!important;border-radius:0!important;background:none!important;width:min(78vw,560px)!important;height:84%!important;cursor:default;align-items:flex-end!important}
+.photo .pose{position:absolute;bottom:0;left:0;width:100%;height:100%;object-fit:contain;object-position:bottom center;opacity:0;transition:opacity .7s ease}
+.photo .pose.on{opacity:1}
+.ph2{border:0!important;box-shadow:0 18px 40px rgba(0,0,0,.18);max-width:420px;justify-self:end}
+.ph2 img{width:100%;height:100%;object-fit:cover}
+@media(max-width:760px){.photo{width:96vw!important;height:72%!important}.ph2{justify-self:center}}
+.photo .pose{filter:drop-shadow(0 0 1px #f4f4f2) drop-shadow(0 0 2px #f4f4f2)}
+.hero h1.nm{width:100%;padding:0 3vw;display:flex;justify-content:space-between;align-items:center;font-size:min(7vw,130px);font-family:Anton,"Arial Narrow","Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-transform:uppercase;white-space:nowrap}
+.tagl{position:absolute;z-index:3;top:calc(60px + 5vh);left:0;right:0;text-align:center;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#55554f;font-weight:600}
+@media(max-width:760px){.hero h1.nm{flex-direction:column;justify-content:center;gap:0;font-size:13.5vw;line-height:1;top:22%;position:absolute}.tagl{font-size:10px;letter-spacing:.16em;padding:0 4vw}}
+.hero h1.nm{flex-direction:column!important;justify-content:center!important;align-items:center;font-size:min(13vw,210px)!important;line-height:.95;text-align:center;top:auto;padding:0 3vw}
+@media(max-width:760px){.hero h1.nm{font-size:14vw!important;top:auto!important}}
+.tagl{top:auto;bottom:20vh}
+.about{grid-template-columns:minmax(0,1fr)!important}.about p{max-width:760px}
+.hero .hp{position:absolute;left:0;bottom:0;width:min(52vw,720px);height:auto;mix-blend-mode:multiply;filter:brightness(1.06) contrast(1.06);z-index:1;pointer-events:none}
+.hero .hright{position:absolute;z-index:2;right:4vw;top:50%;transform:translateY(-50%);text-align:right;max-width:52vw}
+.hero .hright h1.nm{position:static!important;width:auto;padding:0!important;align-items:flex-end!important;text-align:right;font-size:min(7.4vw,130px)!important;line-height:1}
+.hero .hright .tagl{position:static!important;text-align:right;margin-top:20px;letter-spacing:.2em;font-size:12px}
+.hl{display:none!important}
+@media(max-width:760px){.hero .hp{width:100vw}.hero .hright{top:calc(60px + 6vh);transform:none;right:5vw;max-width:90vw}
+.hero .hright h1.nm{font-size:13.5vw!important}.hero .hright .tagl{font-size:10px;letter-spacing:.12em}.hr{display:none}}
+
+/* ---- final responsive hero: normal flow, no overlap ---- */
+.hero{height:auto!important;min-height:0!important;display:grid!important;grid-template-columns:minmax(0,1fr)!important;align-items:start!important;justify-content:stretch!important;padding:calc(64px + env(safe-area-inset-top,0px)) 0 0!important;overflow:hidden;position:relative}
+.hero .hright{grid-column:1;grid-row:1;position:static!important;transform:none!important;max-width:none!important;width:100%;padding:clamp(20px,5vh,40px) 5vw 6px!important;text-align:right}
+.hero .hright h1.nm{font-size:clamp(40px,13vw,104px)!important;align-items:flex-end!important;text-align:right;line-height:1;word-break:keep-all}
+.hero .hright .tagl{margin-top:14px;font-size:clamp(9px,2.6vw,12px)!important;letter-spacing:.14em!important;line-height:1.5}
+.hero .hp{grid-column:1;grid-row:2;position:static!important;display:block;width:min(80vw,440px)!important;height:auto!important;justify-self:start;margin-top:10px}
+.hr{display:none!important}
+@media (min-width:900px),(min-width:640px) and (orientation:landscape){
+ .hero{min-height:100svh!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:end!important}
+ .hero .hp{grid-column:1;grid-row:1;width:auto!important;max-width:100%;max-height:calc(100svh - 70px);justify-self:start;align-self:end}
+ .hero .hright{grid-column:2;grid-row:1;align-self:center;padding:0 4vw 8vh 2vw!important}
+ .hero .hright h1.nm{font-size:clamp(34px,7vw,124px)!important}
+ .hero .hright .tagl{font-size:12px!important;letter-spacing:.2em!important}
+ .hr{display:block!important}
+}
+@media (max-width:359px){.hero .hright h1.nm{font-size:12vw!important}.hero .hp{width:86vw!important}}
+
+/* ===== COVER (editorial hero) ===== */
+:root{--nav-h:64px}
+.cover{background:var(--bg);min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr);align-items:start;
+ padding:calc(var(--nav-h) + env(safe-area-inset-top,0px)) 0 0;overflow:hidden}
+.cover__portrait{margin:0;line-height:0;width:min(88vw,520px);justify-self:start}
+.cover__portrait img{display:block;width:100%;height:auto;
+ filter:grayscale(1) contrast(1.12) brightness(1.06);mix-blend-mode:multiply;
+ -webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);mask-image:linear-gradient(to bottom,#000 80%,transparent 100%)}
+.cover__text{container-type:inline-size;text-align:right;padding:clamp(8px,2vh,24px) clamp(20px,5vw,80px) clamp(40px,8vh,80px)}
+.cover__name{font-family:Anton,"Bebas Neue",Impact,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;
+ line-height:.9;letter-spacing:.005em;color:var(--fg);font-size:13vw;font-size:14cqi;white-space:nowrap}
+.cover__name span{display:block;width:max-content;margin-left:auto}
+.cover__sub{margin-top:clamp(14px,2.6vw,28px);font-size:clamp(10px,2.7vw,13px);font-weight:600;letter-spacing:.22em;
+ text-transform:uppercase;color:#5b5b56;line-height:1.5}
+@media (min-width:820px),(min-width:640px) and (orientation:landscape){
+ .cover{grid-template-columns:44fr 56fr;align-items:center}
+ .cover__portrait{width:100%;align-self:end;justify-self:stretch}
+ .cover__portrait img{max-height:calc(100svh - var(--nav-h));object-fit:contain;object-position:left bottom}
+ .cover__text{align-self:center;padding:0 clamp(24px,5vw,96px) 6vh 2vw}
+ .cover__name{font-size:6.5vw;font-size:14cqi}
+ .cover__sub{font-size:clamp(11px,1.05vw,15px)}
+}
+</style></head><body>
+<nav id="nav"><a class="brand" href="#top">Jaswanth Madamanchi</a><div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Experience</a><a href="#projects">Projects</a><a href="#training">Training</a><a href="#certs">Certifications</a><a href="#edu">Education</a><a href="#contact">Contact</a><a class="rbtn" href="https://drive.google.com/file/d/1rtA8jEi80s3AWDq-YnC4ME-ic4fFskDA/view?usp=sharing" target="_blank" rel="noopener">Resume</a></div></nav>
+
+<header class="cover" id="top">
+  <figure class="cover__portrait"><img src="assets/hero.jpg" alt="Jaswanth Madamanchi, half-body portrait in a blazer"></figure>
+  <div class="cover__text">
+    <h1 class="cover__name"><span>Jaswanth</span><span>Madamanchi</span></h1>
+    <p class="cover__sub">Data Science &amp; AI · Machine Learning</p>
+  </div>
+</header>
+
+<section id="about"><h2>About</h2><div class="about"><div>
+<div class="big" style="margin-bottom:28px;font-weight:700">Data Science &amp;<br>AI Enthusiast</div>
+<p style="font-size:19px;font-weight:500;line-height:1.5">Computer Science undergraduate specializing in Machine Learning, Deep Learning and NLP, focused on turning real-world data into predictive models and actionable insights.</p>
+<p>As a Data Science Intern at Intellipaat, I built Time Series forecasting and NLP solutions and integrated LLM-based approaches into data science workflows. My projects cover the full ML lifecycle, from EDA and feature engineering to model evaluation and modular training pipelines, including a student performance predictor that reaches ~90% accuracy on test data.</p>
+<p>Backed by the AI &amp; Data Science program at IIT Indore (with Microsoft) and a solid DSA foundation in C++, I am seeking opportunities to apply data science and AI to solve real business problems.</p>
+<div class="stats"><div><b>~90%</b><span>Model accuracy</span></div><div><b>6 mo</b><span>DS internship</span></div><div><b>2</b><span>End-to-end projects</span></div><div><b>7</b><span>Certifications</span></div></div>
+</div>
+</div></section>
+
+<section class="dk" id="skills"><h2>Skills</h2><div class="big">Technical Skills</div>
+<div class="tabs" id="tabs"></div><div class="fan" id="fan"></div></section>
+
+<section id="work"><h2>Experience</h2>
+<div class="item"><div><div class="m">Mar'25 – Aug'25</div></div><div>
+<h3>Data Science Intern</h3><div class="m">Intellipaat Software Solutions Pvt. Ltd</div>
+<ul><li>Worked on Machine Learning and Deep Learning projects, applying data preprocessing, feature engineering, model training, evaluation, and optimization techniques to real-world datasets.</li>
+<li>Developed Time Series and NLP solutions, performing forecasting, text preprocessing, feature extraction, and model evaluation to derive meaningful insights from structured and unstructured data.</li>
+<li>Explored Generative AI applications, integrating LLM-based approaches with data science workflows to build practical AI-driven solutions and automate analytical tasks.</li>
+<li>Performed statistical analysis on datasets and built machine learning models from scratch, strengthening understanding of model development and data-driven problem solving.</li></ul>
+<div style="margin:14px 0"><a class="btn" href="https://drive.google.com/file/d/1AyLuXK72f-Tax2WLqLBM5QahgWpMdmhp/view" target="_blank" rel="noopener">View Internship Certificate →</a></div><div>Python,Pandas,NumPy,Scikit-learn,TensorFlow,PyTorch,Matplotlib,Seaborn,NLP,Time Series,Generative AI,LLMs</div></div></div></section>
+
+<section id="projects"><h2>Projects</h2><div class="pgrid">
+<article class="pcard"><div class="when">Jul'26 – Aug'26</div><h3>Student Performance Indicator</h3>
+<p>An end-to-end machine learning project that predicts student performance using multiple ML algorithms.</p>
+<div class="stat">~90% prediction accuracy on the test dataset</div>
+<div class="hl4"><div><b>Data preparation</b>Automated EDA; handled missing values, categorical variables, feature engineering and train-test splitting.</div>
+<div><b>Modeling</b>Built and compared multiple ML models using appropriate evaluation metrics to find the most effective one.</div>
+<div><b>Pipeline design</b>Modular data ingestion, transformation and model training pipelines for reproducibility and scalability.</div></div>
+<div><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Scikit-learn</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span></div>
+<div class="foot" style="padding-top:20px"><a class="btn" href="https://github.com/jaswanth-m-ai/ML-Project" target="_blank" rel="noopener">View on GitHub →</a></div></article>
+<article class="pcard"><div class="when">Apr'26 – May'26</div><h3>Insurance Cost Analysis</h3>
+<p>Exploratory data analysis of medical insurance data to find what drives insurance charges.</p>
+<div class="stat">Factors: Age · BMI · Smoking · Gender · Region</div>
+<div class="hl4"><div><b>Analysis</b>Identified patterns, correlations and major cost-driving factors in the dataset.</div>
+<div><b>Visualization</b>Created data visualizations and statistical summaries showing relationships between demographic, lifestyle and cost variables.</div>
+<div><b>Preparation</b>Applied data preprocessing and feature analysis techniques to derive insights into factors affecting insurance costs.</div></div>
+<div><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span></div>
+<div class="foot" style="padding-top:20px"><a class="btn" href="https://github.com/jaswanth-m-ai/insurance-cost-analysis" target="_blank" rel="noopener">View on GitHub →</a></div></article>
+</div></section>
+<section class="resume" id="resume"><div class="big">Want the full picture?</div><p>View or download my resume for my complete background, skills and experience.</p>
+<a class="btn solid" href="https://drive.google.com/uc?export=download&id=1rtA8jEi80s3AWDq-YnC4ME-ic4fFskDA" target="_blank" rel="noopener">Download Resume (PDF)</a><a class="btn" href="https://drive.google.com/file/d/1rtA8jEi80s3AWDq-YnC4ME-ic4fFskDA/view?usp=sharing" target="_blank" rel="noopener">View Online</a></section>
+<section id="training"><h2>Training</h2><div class="pgrid">
+<article class="pcard"><div class="when">Mar'25 – Aug'26</div><h3>AI &amp; Data Science Program</h3>
+<p>Professional Certificate Program at IIT Indore with structured training in Exploratory Data Analysis (EDA) and Machine Learning through practical case studies on real-world datasets and business problems.</p>
+<div class="stat">In collaboration with Microsoft and IIT Indore</div>
+<div class="hl4"><div><b>Recommendation</b>Netflix Recommendation System for personalized content suggestions.</div>
+<div><b>Capstone — Churn</b>Customer Churn Prediction Model to predict churn and identify key customer factors.</div>
+<div><b>Capstone — Forecasting</b>Walmart Sales Forecasting using time-series analysis to analyze and predict sales trends.</div></div>
+<div class="foot" style="padding-top:20px"><a class="btn" href="https://github.com/jaswanth-m-ai/ML-Project" target="_blank" rel="noopener">View on GitHub →</a></div></article>
+<article class="pcard"><div class="when">Jun'26 – Jul'26</div><h3>DSA Using C++</h3>
+<p>Structured training at TheEduBootCamp in Data Structures and Algorithms using C++, focused on problem-solving and algorithmic thinking.</p>
+<div class="stat">C++ · LeetCode-based practice</div>
+<div class="hl4"><div><b>Concepts</b>Arrays, stacks, queues and fundamental sorting techniques.</div>
+<div><b>Project</b>Inventory Management System in C++ implementing practical inventory operations.</div>
+<div><b>Problem solving</b>LeetCode challenges across data structures, plus time and space complexity analysis.</div></div>
+<div class="foot" style="padding-top:20px"><a class="btn" href="https://drive.google.com/file/d/1GAsIUs1A4Qq-LNXC-o8z9tMkByF2d0WM/view?usp=drivesdk" target="_blank" rel="noopener">View Certificate →</a></div></article>
+</div></section>
+
+<section id="certs"><h2>Certifications</h2><div class="cgrid"><a class="cc" href="https://drive.google.com/file/d/1GAsIUs1A4Qq-LNXC-o8z9tMkByF2d0WM/view?usp=drivesdk" target="_blank" rel="noopener"><b>Job Ready DSA Boot Camp Using C++ (with Leetcode)</b><span>TheEduBootCamp · Aug'26</span><em>View certificate ↗</em></a><a class="cc" href="https://drive.google.com/file/d/100LWPUC_WldBsmS0l6ymku5L1TBViayt/view" target="_blank" rel="noopener"><b>Database Management System Part - 1</b><span>Infosys Spring Board · Jul'26</span><em>View certificate ↗</em></a><a class="cc" href="https://drive.google.com/file/d/1fJMazPj6CbVQCRegT4ykvVAAl0hQ8L8B/view?usp=sharing" target="_blank" rel="noopener"><b>Artificial Intelligence</b><span>Intellipaat · Mar'26</span><em>View certificate ↗</em></a><a class="cc" href="https://drive.google.com/file/d/1NucSteHIcHI4t6Lly2LVrpCIEaf6_77L/view" target="_blank" rel="noopener"><b>MS SQL</b><span>Intellipaat · Sep'25</span><em>View certificate ↗</em></a><a class="cc" href="https://drive.google.com/file/d/1fPjYNOKuhPlk3YCS4vMQKZmxihpfVHBd/view" target="_blank" rel="noopener"><b>Programming Using C++</b><span>Infosys SpringBoard · Aug'25</span><em>View certificate ↗</em></a><a class="cc" href="https://drive.google.com/file/d/1o_7BqrwFZtf4qFZDai66rTcyVZbvoZ2Z/view" target="_blank" rel="noopener"><b>Data Management (Excel &amp; Tableau)</b><span>Techveda · Mar'25</span><em>View certificate ↗</em></a><a class="cc" href="https://drive.google.com/file/d/1dDfxAbrZr48GS47KLFGsqdq2X51tsSd0/view" target="_blank" rel="noopener"><b>Python with Libraries</b><span>SkillEra · Jan'25</span><em>View certificate ↗</em></a></div></section>
+
+<section id="edu"><h2>Education</h2>
+<div class="item"><div><div class="m">Aug'24 – Jun'28</div></div><div><h3>Bachelor of Technology — Computer Science and Engineering</h3><div class="m">Lovely Professional University, Phagwara, Punjab · CGPA: 7.03</div></div></div>
+<div class="item"><div><div class="m">Jun'22 – Mar'24</div></div><div><h3>Intermediate (PCM)</h3><div class="m">Sanskriti Junior College, Tirupati, AP · Percentage: 87.6</div></div></div>
+<div class="item"><div><div class="m">Jun'21 – Mar'22</div></div><div><h3>Secondary Education</h3><div class="m">Red Cherries School, Tirupati, AP · Percentage: 86.7</div></div></div></section>
+
+<section class="cta" id="contact"><div class="big">Let's create<br><span>something.</span></div>
+<div class="cols"><div><small>Mail</small><a href="mailto:jaswanth.m.ai@gmail.com">jaswanth.m.ai@gmail.com</a></div>
+<div><small>LinkedIn</small><a href="https://www.linkedin.com/in/2006jaswanth/">linkedin.com/in/2006jaswanth</a></div>
+<div><small>GitHub</small><a href="https://github.com/jaswanth-m-ai">github.com/jaswanth-m-ai</a></div>
+<div><small>Mobile</small><a href="tel:+918121934049">+91 8121934049</a></div></div></section>
+<footer><span>© 2026 Jaswanth Madamanchi</span><a href="#top" style="color:inherit">Back to top ↑</a></footer>
+
+<script>
+const D=[["Languages",["C++","Python","SQL (PostgreSQL, MS SQL)"]],
+["Tools",["NumPy","Pandas","Scikit-learn","PyTorch","Power BI","NLTK","Matplotlib","XGBoost","Flask"]],
+["AI",["Machine Learning","Deep Learning","NLP","Seq2Seq","Attention Mechanisms","RAG","Transformers","SHAP"]],
+["Domain Skills",["EDA","Feature Engineering","Web Scraping","Data Structures and Algorithms (DSA)"]],
+["Soft Skills",["Analytical Thinking","Problem-Solving","Team Collaboration","Adaptability"]]];
+const fan=document.getElementById('fan'),tabs=document.getElementById('tabs');let cur=2;
+D.forEach((d,i)=>{const b=document.createElement('button');b.textContent=d[0];b.onclick=()=>{cur=i;draw()};tabs.append(b);
+const c=document.createElement('div');c.className='card';c.innerHTML='<h3>'+d[0]+'</h3><ul>'+d[1].map(x=>'<li>'+x+'</li>').join('')+'</ul>';c.onclick=()=>{cur=i;draw()};fan.append(c)});
+function draw(){[...fan.children].forEach((c,i)=>{const o=i-cur,a=Math.abs(o);c.classList.toggle('on',!o);
+c.style.zIndex=10-a;c.style.opacity=a>2?0:1;c.style.transform=`translateX(${o*(innerWidth<700?34:150)}px) rotate(${o*8}deg) scale(${1-a*.06})`});
+[...tabs.children].forEach((b,i)=>b.classList.toggle('on',i==cur))}
+draw();addEventListener('resize',draw);
+function clock(){try{document.getElementById('clk').textContent=new Date().toLocaleTimeString('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',hour12:true})}catch(e){}}
+clock();setInterval(clock,30000);
+
+const L=[...document.querySelectorAll('nav .links a:not(.rbtn)')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){L.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('section[id]').forEach(x=>io.observe(x));
+
+(function(){var n=document.querySelector('.cover__name');if(!n)return;
+function fit(){var box=n.parentElement,cs=getComputedStyle(box),w=box.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
+n.style.fontSize='100px';var m=Math.max.apply(null,[].map.call(n.children,function(c){return c.getBoundingClientRect().width}));
+n.style.fontSize=Math.min(100*w*0.97/m,200)+'px'}
+fit();addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);addEventListener('load',fit)})();
+</script></body></html>
